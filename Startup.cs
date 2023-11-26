@@ -1,3 +1,4 @@
+using libreria_LDVP.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,14 +12,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
+using libreria_LDVP.Data.Models;
+using libreria_LDVP.Data.Models.Services;
+using libreria_LDVP.Data.Services;
 
 namespace libreria_LDVP
 {
     public class Startup
     {
+        public string ConnectionString { get; set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ConnectionString = configuration.GetConnectionString("DefaultConnectionString");
         }
 
         public IConfiguration Configuration { get; }
@@ -28,6 +36,13 @@ namespace libreria_LDVP
         {
 
             services.AddControllers();
+            //Configurar DbContext con SQL
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+            //Configurar para ser usado 
+            services.AddTransient<BooksService>();
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublisherService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "libreria_LDVP", Version = "v1" });
@@ -54,6 +69,7 @@ namespace libreria_LDVP
             {
                 endpoints.MapControllers();
             });
+            //AppDbInitialer.Seed(app); 
         }
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UTS-CDS\\Desktop\\libreria_LDVP\\libreria_LDVP.csproj": {}
+    "C:\\Users\\luism\\Downloads\\libreria_LDVP\\libreria_LDVP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UTS-CDS\\Desktop\\libreria_LDVP\\libreria_LDVP.csproj": {
+    "C:\\Users\\luism\\Downloads\\libreria_LDVP\\libreria_LDVP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UTS-CDS\\Desktop\\libreria_LDVP\\libreria_LDVP.csproj",
+        "projectUniqueName": "C:\\Users\\luism\\Downloads\\libreria_LDVP\\libreria_LDVP.csproj",
         "projectName": "libreria_LDVP",
-        "projectPath": "C:\\Users\\UTS-CDS\\Desktop\\libreria_LDVP\\libreria_LDVP.csproj",
-        "packagesPath": "C:\\Users\\UTS-CDS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UTS-CDS\\Desktop\\libreria_LDVP\\obj\\",
+        "projectPath": "C:\\Users\\luism\\Downloads\\libreria_LDVP\\libreria_LDVP.csproj",
+        "packagesPath": "C:\\Users\\luism\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luism\\Downloads\\libreria_LDVP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\UTS-CDS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luism\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,6 +45,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -69,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
